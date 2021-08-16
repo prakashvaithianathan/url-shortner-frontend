@@ -164,7 +164,7 @@
 
 .result{
   border: 2px solid grey;
-  width: 500px;
+  width: auto;
   text-align: center;
   padding: 5px 10px;
   border-radius: 10px;
@@ -172,7 +172,7 @@
   align-items: center;
   gap: 10px;
   position: absolute;
-  bottom: 20%;
+  bottom: 15%;
   left: 50%;
   transform: translate(-50%,-50%);
 }

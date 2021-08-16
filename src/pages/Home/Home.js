@@ -31,7 +31,7 @@ const [result, setResult] = useState('')
          
        }
      })()
-  },[])
+  },[token])
 
   if (!user) {
     dispatch(authActions.login(token));
@@ -100,11 +100,12 @@ const [result, setResult] = useState('')
               fontFamily: "cursive",
             }}
           >
-            {token && user ? (
+          
+            {token  ? (
               <span role="img" aria-label="emoji" className={style.mainText}>
                 
                 
-                 Hi, {user.data.firstName} {user.data.lastName}
+                 {/* Hi, {user.data.firstName} {user.data.lastName} */}
             
               </span>
             ) : null}
