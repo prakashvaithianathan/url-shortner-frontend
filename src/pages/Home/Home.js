@@ -82,14 +82,14 @@ const [warning, setWarning] = useState('')
     alert("Successfully copied: " + result);
   };
 
-  
+ 
 
 
   return (
     <div>
-      {token ?
+      {token?
       <div>
-      {loading ? (
+      {loading &&user ? (
         <div className={style.container}>
           <Ztext
             // depth='5rem'
@@ -116,7 +116,7 @@ const [warning, setWarning] = useState('')
               <span role="img" aria-label="emoji" className={style.mainText}>
                 
                 
-                 {/* Hi, {user.data.firstName} {user.data.lastName} */}
+                 Hi, {user.data.firstName} {user.data.lastName}
             
               </span>
             ) : null}
