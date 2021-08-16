@@ -2,6 +2,9 @@ import React,{useState} from 'react'
 import style from './ForgotPassword.module.css'
 
 import { Link, Redirect } from "react-router-dom";
+import axios from '../../axios'
+import 'react-responsive-modal/styles.css';
+import { Modal } from 'react-responsive-modal';
 
 const ForgotPassword = ({state:{checkedA}}) => {
 
@@ -35,7 +38,7 @@ const ForgotPassword = ({state:{checkedA}}) => {
   
     const [message, setMessage] = useState("");
     const [nextPage, setNextPage] = useState(false);
-  
+  const token = localStorage.getItem("token")
     const handleClick = async (event) => {
       event.preventDefault();
   
@@ -51,7 +54,17 @@ const ForgotPassword = ({state:{checkedA}}) => {
       if(value.password!==value.confirmPassword){
         return setEmptyConfirmPassword('! Password Mismatch')
       }
-
+      try {
+        
+        const object={email: value.email, password: value.password}
+        const {data} = await axios.put('api/user/forgot',object,{
+          headers:{ 'Content-Type': 'application/json',authorization:token}
+        })
+           onOpenModal()
+         setMessage(data.message)
+      } catch (error) {
+        setMessage(error.response.data.message)
+      }
 
 
     }
@@ -119,7 +132,12 @@ const ForgotPassword = ({state:{checkedA}}) => {
           </form>
         
         </div>
-    
+        {message ? 
+         
+         <Modal  open={open} onClose={onCloseModal} center>
+           
+           <h2 className={style.modal}>{message}</h2>
+         </Modal> :null}
 
       </div>
      
