@@ -1,0 +1,181 @@
+.textCenter {
+  padding-top: 10%;
+  text-align: center;
+}
+.inputBox{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 60%;
+     top: 50%;
+     left: 50%;
+     transform:translate(-50%,-50%)
+}
+
+
+.nightInputBox {
+  display: flex;
+  padding: 10px;
+  background-color: white;
+  justify-content: space-between;
+  border-radius: 10px;
+}
+
+.dayInputBox {
+    display: flex;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    justify-content: space-between;
+    border-radius: 10px;
+  }
+
+.nightInputBox > input {
+  width: 90%;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  font-weight: 500;
+  font-size: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    height: 50px;  
+   
+
+}
+.dayInputBox > input {
+    width: 90%;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    font-weight: 500;
+    font-size: 2rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      height: 50px;  
+      color: white;
+  }
+
+.searchRounded {
+  color: rgb(233, 7, 233) !important;
+  width: 50px !important;
+  height: 50px !important;
+  position:absolute !important;
+  right: 10px !important;
+   z-index: 10;
+}
+
+.dayInputBox > .searchRounded{
+  background-color:black
+}
+.nightInputBox > .searchRounded{
+  background-color:white
+}
+
+.searchRounded:hover{
+    cursor: pointer !important;
+}
+.proceed{
+  position:absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.message{
+  position:absolute;
+  left: 50%;
+  top: 58%;
+  transform:translate(-50%,-50%);
+  color: red;
+}
+.proceed>button{
+ outline:none;
+ border: none;
+ background: rgb(0, 225, 255);
+ padding: 5px 10px ;
+ border-radius: 10px;
+ box-shadow: 2px 2px 10px grey;
+}
+
+.proceed>a>button{
+  outline:none;
+  border: none;
+  background: rgb(0, 225, 255);
+  padding: 5px 10px ;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px grey;
+ }
+
+ .spinner{
+  position:absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%,-50%) !important;
+}
+.mainText{
+  color: rgb(21, 231, 168);
+  -webkit-text-stroke:.5px rgb(14, 214, 221) ;
+}
+
+
+@media screen and (max-width: 1500px){
+  .mainText{
+    font-size: 5rem;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 1300px){
+  .mainText{
+    font-size: 3rem;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width:1000px){
+  .mainText{
+    font-size: 2rem;
+    text-align: center;
+    -webkit-text-stroke:1px rgb(0, 38, 255) ;
+    color: white;
+  }
+  .span{
+    position:absolute;
+    transform: translateY(0px);
+  }
+
+}
+@media screen and (max-width: 768px){
+  .inputBox{
+    width: 80%;
+  }
+  .mainText{
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .span{
+    position:absolute;
+    transform: translateY(0px);
+  }
+  .message{
+    font-size: 1rem;
+  }
+  
+}
+
+.result{
+  border: 2px solid grey;
+  width: 500px;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.result:hover{
+  cursor: pointer;
+}

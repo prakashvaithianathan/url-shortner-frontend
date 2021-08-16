@@ -1,0 +1,30 @@
+.table{
+    /* background-color: white !important;
+    color: white !important; */
+    border: 2px solid rgb(204, 0, 255) !important;
+    text-align: left !important;
+    width: 90vw !important;
+    height: 70vh !important;
+    position: absolute !important;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%)
+}
+
+.row{
+    text-align: left !important;
+}
+.rowHead{
+    padding: 10px 50px !important;
+    text-align: left !important;
+    /* background: rgb(0, 238, 255) !important; */
+    font-weight: 500 !important;
+    font-size: medium !important;
+}
+.title{
+    text-align: center !important;
+}
+.rowHead{
+    position: sticky !important;
+    top: 0;
+}

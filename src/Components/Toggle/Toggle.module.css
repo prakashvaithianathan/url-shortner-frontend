@@ -1,0 +1,11 @@
+.toggle{
+    position:absolute !important;
+    right: 20px !important;
+    top: 80px !important;
+    z-index: 2;
+}
+
+.dayNight{
+    margin: -10px 0 0 15px;
+    font-size: .9rem;
+}
