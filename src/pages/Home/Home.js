@@ -12,15 +12,20 @@ import { CircularProgress } from "@material-ui/core";
 import style from "./Home.module.css";
 import {Redirect} from 'react-router-dom'
 import copy from "copy-to-clipboard";
+import Modal from 'react-responsive-modal'
 
 
 const Home = ({ state: { checkedA } }) => {
+  const [open, setOpen] = useState(false);
+  const onOpenModal = () => setOpen(true);
+  const onCloseModal = () => setOpen(false);
   const dispatch = useDispatch();
   const [value, setValue] = useState("");
 
   const token = localStorage.getItem("token");
 const [user, setUser] = useState('')
 const [result, setResult] = useState('')
+const [warning, setWarning] = useState('')
   useEffect(()=>{
      (async()=>{
        try {
@@ -28,7 +33,7 @@ const [result, setResult] = useState('')
          
          setUser(data)
        } catch (error) {
-         
+         console.log(error);
        }
      })()
   },[token])
@@ -51,6 +56,10 @@ const [result, setResult] = useState('')
           authorization: token,
         },
       });
+      if(data.message){
+        setWarning(data.message)
+        onOpenModal()
+      }
       setResult(data.shortUrl)
     } else {
       return setMessage("Enter the correct Url");
@@ -72,6 +81,8 @@ const [result, setResult] = useState('')
     copy(result);
     alert("Successfully copied: " + result);
   };
+
+  
 
 
   return (
@@ -139,6 +150,12 @@ const [result, setResult] = useState('')
               </Link>
             )}
           </div>
+          {warning ? 
+         
+         <Modal  open={open} onClose={onCloseModal} center>
+           
+           <h2 className={style.modal}>{warning}</h2>
+         </Modal> :null}
           {result?
           <div className={style.result} onClick={copied}>
           <h4 id="output">

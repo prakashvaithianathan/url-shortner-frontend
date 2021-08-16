@@ -179,3 +179,8 @@
 .result:hover{
   cursor: pointer;
 }
+
+.modal{
+  padding: 20px !important;
+  color: black !important;
+}
